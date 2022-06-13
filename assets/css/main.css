@@ -25,13 +25,14 @@ header {
   height: 10vh;
   width: 100%;
   font-size: 3rem;
+  line-height: 75px;
   text-align: center;
-  position: top;
+  position: fixed;
   top: 0;
 }
 
 #main-screen {
-  width: 70vw;
+  width: 80vw;
   height: 80vh;
   border-radius: 60px;
   background-color: #eef1db;
@@ -41,4 +42,17 @@ header {
 h1 {
   font-size: 2rem;
   margin: 20px auto;
+}
+
+@media all and (max-width: 1024px) {
+  header {
+    font-size: 2rem;
+  }
+  header > img {
+    width: 2rem;
+    height: 2rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
 }
