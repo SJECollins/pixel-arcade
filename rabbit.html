@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pixel Arcade is a collection of single player games for mobile and desktop browsers.">
+  <meta name="keywords" content="Pixel Arcade, games, gaming, mobile, browser, HTML, CSS, JavaScript">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/rabbit.css" rel="stylesheet">
+  <title>Slap-a-Rabbit</title>
+</head>
+<body>
+  <header>
+    <img src="assets/images/pixel-head-green.png"><a href="index.html" alt="Navigates home"> Arcade </a>
+    <img src="assets/images/pixel-head-green.png"></header>
+  <section id="main-screen">
+    <h1>Slap-a-Rabbit</h1>
+
+    <button id="start-one">Level One: Start!</button>
+    <button id="start-two">Level Two: Start!</button>
+    <button id="start-three">Level Three: Start!</button>
+    <button id="reset">Reset</button>
+
+    <div id="game-over">
+      <div id="end">
+          <h2>Game Over!</h2>
+          <p>You slapped <span id="end-score">0</span> rabbits!</p>
+          <a href="rabbit.html">Retry</a>
+          <a href="index.html">Home</a>
+      </div>
+  </div>
+
+    <div id="board">
+    </div>
+
+    <div id="timer">
+      <h2>Time Left: <span id="time">0</span></h2>
+    </div>
+
+    <div id="scoreboard">
+      <h2>Slaps: <span id="score">0</span></h2>
+    </div>
+    
+  </section>
+  <script src="assets/scripts/whack.js"></script>
+</body>
+</html>
