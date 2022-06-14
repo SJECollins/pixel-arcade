@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pixel Arcade is a collection of single player games for mobile and desktop browsers.">
+  <meta name="keywords" content="Pixel Arcade, games, gaming, mobile, browser, HTML, CSS, JavaScript">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/invaders.css" rel="stylesheet">
+  <title>Space Invaders</title>
+</head>
+<body>
+  <header>
+    <img src="assets/images/pixel-head-green.png" alt="Green pixel head logo">
+    <a href="index.html" alt="Navigates to home menu page">Pixel Arcade</a>
+    <img src="assets/images/pixel-head-green.png" alt="Green pixel head logo">
+  </header>
+  <section id="main-screen">
+    <h1>Space Invaders</h1>
+
+    <p2>Score: <span id="score">0</span></p2>
+      <button id="start">Start!</button>
+
+    <div id="game-over">
+      <div id="end">
+          <h2>Game Over!</h2>
+          <p>YOU <span id="result"></span></p>
+          <p>You killed <span id="end-score">0</span> invaders!</p>
+          <a href="invaders.html">Level Select</a>
+          <a href="index.html">Home</a>
+      </div>
+    </div>
+
+    <div id="board"></div>
+
+    <div id="directions">
+        <button onclick="moveLeft()" id="left"></button>
+        <button id="fire">FIRE!</button>
+        <button onclick="moveRight()" id="right"></button>
+    </div>
+
+  </section>
+  <script src="assets/scripts/invaders.js"></script>
+</body>
+</html>
