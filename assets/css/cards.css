@@ -1,0 +1,78 @@
+#levels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px 75px;
+  line-height: 32px;
+}
+
+button {
+  background-color: #282828;
+  color: #25c40d;
+  font-size: 1rem;
+  width: 120px;
+  padding: 0.25em 0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.board {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid blue;
+  perspective: 1000px;
+}
+
+.grid {
+  max-width: 900px;
+  max-height: 640px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
+}
+
+.card {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin: 15px auto;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  border-radius: 10px;
+  background-color: #282828;
+  box-shadow: 5px 0 5px;
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  background: center / contain no-repeat;
+  background-color: #282828;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
