@@ -7,6 +7,30 @@
   justify-content: space-around;
 }
 
+#levels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: #282828;
+  color: #25c40d;
+  font-size: 1rem;
+  width: 100px;
+  padding: 4px 0;
+  border-style: outset;
+  border-radius: 20px;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+.current-level {
+  font-weight: 700;
+  background-color: #575555;
+  border: none;
+}
+
 #choices {
   display: flex;
   flex-direction: row;
