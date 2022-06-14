@@ -9,11 +9,11 @@
 }
 
 .game-selection {
-
   width: 150px;
   height: 150px;
   margin: auto auto;
 }
+
 .game-selection img {
   height: 100%;
   width: 100%;
@@ -24,4 +24,11 @@
 .background-card {
   background-color: #282828;
   border-radius: 20px;
+}
+
+@media (max-width: 520px) {
+  .game-selection {
+    width: 100px;
+    height: 100px;
+  }
 }
