@@ -1,5 +1,5 @@
 #board {
-  width: 800px;
+  max-width: 100%;
   height: 600px;
   margin: 50px auto;
   display: flex;
@@ -44,7 +44,7 @@ button {
 }
 
 .selections {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   cursor: pointer;
 }

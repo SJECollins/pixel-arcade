@@ -84,7 +84,7 @@ h1 {
   margin: 10px 0;
 }
 
-@media all and (max-width: 1024px) {
+@media (max-width: 1024px) {
   header {
     font-size: 2rem;
   }
@@ -94,5 +94,16 @@ h1 {
   }
   h1 {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  header {
+    font-size: 1rem;
+  }
+  #main-screen {
+    width: 90vw;
+    height: 85vh;
+    margin-top: 5vh;
   }
 }
