@@ -1,11 +1,14 @@
+/* Import font */
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+/* Reset default browser styling */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* Main styling to be used across all pages */
 body {
   background-color: #282828;
   font-family: "Press Start 2P", sans-serif;
@@ -42,6 +45,43 @@ header {
 h1 {
   font-size: 2rem;
   margin: 20px auto;
+}
+
+/* Styling for game over screen across all pages*/
+
+#game-over {
+  background-color: #282828;
+  color: #25c40d;
+  width: 50vw;
+  height: 25vh;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  display: none;
+}
+
+#end {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#end p {
+  margin: 10px 0;
+}
+
+#end a {
+  background-color: #EEF1DB;
+  color: #282828;
+  padding: 1em 2em;
+  border-radius: 10px;
+  margin: 10px 0;
 }
 
 @media all and (max-width: 1024px) {
