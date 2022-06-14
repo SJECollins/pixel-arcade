@@ -36,13 +36,13 @@ button {
   max-height: 640px;
   margin: 0 auto;
   display: grid;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto;
   grid-template-columns: auto auto auto auto;
 }
 
 .card {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   position: relative;
   margin: 15px auto;
   transform: scale(1);
