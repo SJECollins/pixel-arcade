@@ -1,0 +1,26 @@
+#board {
+  width: 800px;
+  height: 600px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#computer-choice, #user-choice {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+}
+
+.selections {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
