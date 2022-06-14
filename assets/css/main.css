@@ -97,7 +97,23 @@ h1 {
   }
 }
 
+@media (max-height: 860px) {
+  #end {
+    font-size: 0.75em;
+  }
+  #end p {
+    margin: 5px;
+  }
+  #end a {
+    padding: 0.5em;
+    margin: 5px;
+  }
+}
+
 @media (max-width: 520px) {
+  #game-over {
+    width: 75vw;
+  }
   header {
     font-size: 1rem;
   }

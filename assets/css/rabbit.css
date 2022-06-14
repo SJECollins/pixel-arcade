@@ -80,3 +80,33 @@ button {
 .hole.up .rabbit {
   top: 0;
 }
+
+@media (max-width: 580px) {
+  button {
+    width: 100px;
+    margin: 2px;
+  }
+  #scoreboard {
+    padding-right: 18px;
+  }
+  #timer {
+    padding-left: 18px;
+  }
+  .hole::after {
+    bottom: -30px;
+  }
+}
+
+@media (max-height: 1000px) {
+  h1 {
+    margin: 2px auto;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  #board {
+    height: 60vh;
+    width: 80vw;
+    margin-top: 5px;
+  }
+}
