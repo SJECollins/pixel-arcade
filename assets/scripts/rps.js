@@ -21,7 +21,7 @@ let userPick
 let result
 let userPoints = 0
 let computerPoints = 0
-let round = 1
+let round = 0
 let numberOfRounds = 3
 
 function playThree() {
