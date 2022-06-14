@@ -19,8 +19,12 @@
   <section id="main-screen">
     <h1>Space Invaders</h1>
 
-    <p2>Score: <span id="score">0</span></p2>
+    <div>
       <button id="start">Start!</button>
+      <button onclick="changeWrap()">Wrap <span id="wrap">Off</span></button>
+      <button id="reset">Reset</button>
+    </div>
+    <p>Score: <span id="score">0</span></p>
 
     <div id="game-over">
       <div id="end">

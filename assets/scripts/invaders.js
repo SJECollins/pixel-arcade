@@ -4,9 +4,11 @@ const result = document.getElementById("result")
 const score = document.getElementById("score")
 const endScore = document.getElementById("end-score")
 const startButton = document.getElementById("start")
+const reset = document.getElementById("reset")
 const fire = document.getElementById("fire")
 const left = document.getElementById("left")
 const right = document.getElementById("right")
+const wrap = document.getElementById("wrap")
 
 // Our global variables
 let currentPosition = 217
@@ -19,6 +21,18 @@ let gameEnd = ""
 let invadersId = 0
 let intervalTime = 0
 let noWrap = true
+
+function changeWrap() {
+  if (noWrap === true) {
+    noWrap = false
+    wrap.innerHTML = "ON"
+    return
+  } else if (noWrap === false) {
+    noWrap = true
+    wrap.innerHTML = "OFF"
+  }
+  return 
+}
 
 // Our for loop creating our board
 for (let i = 0; i < 225; i++) {
@@ -191,3 +205,6 @@ startButton.addEventListener("click", startGame)
 fire.addEventListener("click", shoot)
 left.addEventListener("click", moveTank)
 right.addEventListener("click", moveTank)
+reset.addEventListener("click", () => {
+  location.reload() 
+})

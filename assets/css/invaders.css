@@ -1,20 +1,13 @@
 button {
-  background: none;
-  border-style: none;
-  font-size: 1rem;
-  width: 100px;
-  height: 100px;
-  margin-left: 32px;
-  margin-right: 32px;
-  cursor: pointer;
-}
-
-#start {
   background-color: #282828;
   color: #25c40d;
+  font-size: 1rem;
   width: 100px;
-  height: 40px;
-  border-radius: 10px;
+  padding: 4px 0;
+  border-style: outset;
+  border-radius: 20px;
+  margin: 5px 20px;
+  cursor: pointer;
 }
 
 #board {
@@ -58,7 +51,14 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 25px 0;
+  margin: 10px 0;
+}
+
+#directions button {
+  background-color: none;
+  border-style: none;
+  height: 80px;
+  width: 80px;
 }
 
 #left {
@@ -72,6 +72,4 @@ button {
 #fire {
   background-color: #282828;
   color:#25c40d;
-  height: 50px;
-  border-radius: 10px;
 }
