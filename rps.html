@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pixel Arcade is a collection of single player games for mobile and desktop browsers.">
+  <meta name="keywords" content="Pixel Arcade, games, gaming, mobile, browser, HTML, CSS, JavaScript">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/rps.css" rel="stylesheet">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <header>
+    <img src="assets/images/pixel-head-green.png" alt="Green pixel head logo">
+    <a href="index.html" alt="Navigates to home menu page">Pixel Arcade</a>
+    <img src="assets/images/pixel-head-green.png" alt="Green pixel head logo">
+  </header>
+  <section id="main-screen">
+    <h1>Rock, Paper, Scissors</h1>
+    <p>Best of Five!</p>
+
+    <div id="board">
+      
+      <div id="choices">
+        <div>
+          <h2>Computer Choice: </h2>
+          <img id="computer-choice" src="assets/images/rps/rps.webp">
+          <p>Computer Score: <span id="computer-score">0</span></p>
+        </div>
+        <div>
+          <h2>Your Choice:</h2>
+          <img id="user-choice" src="assets/images/rps/rps.webp">
+          <p>Your Score: <span id="user-score">0</span></p>
+        </div>
+      </div>
+
+      <p>Result: <span id="result"></span></p>
+
+      <div id="game-over">
+        <div id="end">
+            <h2>Game Over!</h2>
+            <h2 id="end-score"></h2>
+            <a href="rps.html">Play Again</a>
+            <a href="index.html">Home</a>
+        </div>
+      </div>
+
+      <h2>Select one:</h2>
+      <div id="options">
+        <img id="rock" class="selections" src="assets/images/rps/rock.webp" alt="rock image">
+        <img id="paper" class="selections" src="assets/images/rps/paper.webp" alt="paper image">
+        <img id="scissors" class="selections" src="assets/images/rps/scissors.webp" alt="scissors image">
+      </div>
+      
+    </div>
+
+  </section>
+  <script src="assets/scripts/rps.js"></script>
+</body>
+</html>
