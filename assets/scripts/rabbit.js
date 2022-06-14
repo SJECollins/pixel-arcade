@@ -1,7 +1,5 @@
 // Get DOM elements we want to interact with
 const board = document.getElementById("board")
-const holes = document.querySelectorAll(".hole")
-const rabbits = document.querySelectorAll(".rabbit")
 const startOne = document.getElementById("start-one")
 const startTwo = document.getElementById("start-two")
 const startThree = document.getElementById("start-three")
@@ -11,12 +9,36 @@ let time = document.getElementById("time")
 let score = document.getElementById("score")
 let endScore = document.getElementById("end-score")
 
-// Declaring our important global variables
+// Declaring our global variables
 let points = 0
 let timeUp = false
 let lastHole
 let countdown
 let difficulty
+let numberOfHoles
+let holesArray = []
+let holes = []
+let rabbits = []
+
+/**
+ * Function to generate the holes and rabbits
+ * Can now, if desired, dynamically change the number of holes when levels are selected
+ */
+
+function createHoles() {
+  for (let i = 0; i < numberOfHoles; i++) {
+    const hole = document.createElement("div")
+    hole.classList.add("hole")
+    holesArray.push(hole)
+
+    const rabbit = document.createElement("div")
+    rabbit.classList.add("rabbit")
+
+    board.appendChild(hole)
+    hole.appendChild(rabbit)
+    
+  }
+}
 
 /** 
  * Function to pick a random hole to pop out of
@@ -24,7 +46,7 @@ let difficulty
  * Math.floor makes it a whole integer
  */
 function randomHole(holes) {
-  let pickHole = Math.floor(Math.random() * 9)
+  let pickHole = Math.floor(Math.random() * numberOfHoles)
   let hole = holes[pickHole]
 
   // We don't want the rabbit to pop out of the same hole multiple times in a row
@@ -61,18 +83,21 @@ function disableButtons() {
  * They set the difficulty level, start the game and disable the buttons from being selected once the game starts
  */
 function levelOne() {
+  numberOfHoles = 6
   difficulty = "easy"
   disableButtons()
   startGame()
 }
 
 function levelTwo() {
+  numberOfHoles = 9
   difficulty = "medium"
   disableButtons()
   startGame()
 }
 
 function levelThree() {
+  numberOfHoles = 9
   difficulty = "hard"
   disableButtons()
   startGame()
@@ -94,7 +119,7 @@ function popUp() {
   } else if (difficulty === "hard") {
     speed = levelSpeed(400, 1000)
   }
-
+  
   let hole = randomHole(holes)
   hole.classList.add("up")
   setTimeout(() => {
@@ -127,6 +152,10 @@ function popUp() {
  * function and displays the game over screen with the user's score
  */
 function startGame() {
+  createHoles()
+  holes = document.querySelectorAll(".hole")
+  rabbits = document.querySelectorAll(".rabbit")
+  rabbits.forEach(rabbit => rabbit.addEventListener("click", slap))
   countdown = 30
   time.innerHTML = countdown
   score.innerHTML = 0
@@ -156,7 +185,6 @@ function startGame() {
  * Allow for level select when buttons interacted on main page.
  * Could use onclick() in HTML for buttons but better practice to separate HTML and JS
  */
-rabbits.forEach(rabbit => rabbit.addEventListener("click", slap))
 startOne.addEventListener("click", levelOne)
 startTwo.addEventListener("click", levelTwo)
 startThree.addEventListener("click",levelThree)
