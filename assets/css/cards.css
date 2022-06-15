@@ -46,8 +46,8 @@ button {
   height: 100px;
   position: relative;
   margin: 15px auto;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  /* -webkit-transform: scale(1);
+  transform: scale(1); */
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transition: 0.5s;
@@ -58,8 +58,8 @@ button {
 }
 
 .card:active {
-  -webkit-transform: scale(0.97);
-  transform: scale(0.97);
+  /* -webkit-transform: scale(0.97);
+  transform: scale(0.97); */
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
