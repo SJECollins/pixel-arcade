@@ -73,3 +73,24 @@ button {
   background-color: #282828;
   color:#25c40d;
 }
+
+@media (max-width: 600px) {
+  button {
+    margin: 4px;
+  }
+}
+
+@media (max-width: 400px),
+(max-height: 600px) {
+  button {
+    margin: 5px;
+  }
+  #board {
+    width: 233px;
+    height: 233px;
+  }
+  #board div {
+    width: 15px;
+    height: 15px;
+  }
+}
