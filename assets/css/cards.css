@@ -76,3 +76,27 @@ button {
 .front-face {
   transform: rotateY(180deg);
 }
+
+@media (max-width: 1180px) {
+  h2 {
+    font-size: 1em;
+  }
+  #levels {
+    padding: 5px;
+  }
+  button {
+    width: 80px;
+    padding: 2px 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 75px;
+    height: 75px;
+    margin: 5px auto;
+  }
+  p {
+    font-size: 0.75em;
+  }
+}
