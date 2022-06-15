@@ -61,6 +61,7 @@ h1 {
   transform: translate(-50%, -50%);
   z-index: 99;
   display: none;
+  box-shadow: 15px 15px 30px #282828;
 }
 
 #end {
@@ -84,6 +85,7 @@ h1 {
   margin: 10px 0;
 }
 
+/* Media queries */
 @media (max-width: 1024px) {
   header {
     font-size: 2rem;
@@ -115,7 +117,7 @@ h1 {
 
 @media (max-width: 520px) {
   #game-over {
-    width: 75vw;
+    width: 80vw;
   }
   header {
     font-size: 1rem;

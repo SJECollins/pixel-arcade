@@ -96,7 +96,17 @@ button {
     height: 75px;
     margin: 5px auto;
   }
+  #levels {
+    line-height: normal;
+  }
   p {
     font-size: 0.75em;
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 60px;
+    height: 60px;
   }
 }
