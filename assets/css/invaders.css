@@ -59,6 +59,7 @@ button {
   border-style: none;
   height: 80px;
   width: 80px;
+  touch-action: manipulation;
 }
 
 #left {
