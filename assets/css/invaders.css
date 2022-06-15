@@ -29,20 +29,20 @@ button {
 }
 
 .invader {
-  background: url("/assets/images/invaders/alien.png") center / contain no-repeat;
+  background: url("../images/invaders/alien.png") center / contain no-repeat;
   background-size: 15px;
 }
 
 .tank {
-  background: url("/assets/images/invaders/tank.png") center / contain no-repeat;
+  background: url("../images/invaders/tank.png") center / contain no-repeat;
 }
 
 .missile {
-  background: url("/assets/images/invaders/missile.png") center / contain no-repeat;
+  background: url("../images/invaders/missile.png") center / contain no-repeat;
 }
 
 .boom {
-  background: url("/assets/images/invaders/boom.png") center / contain no-repeat;
+  background: url("../images/invaders/boom.png") center / contain no-repeat;
 }
 
 #directions {
@@ -62,11 +62,11 @@ button {
 }
 
 #left {
-  background: url("/assets/images/invaders/left.png") center / cover no-repeat;
+  background: url("../images/invaders/left.png") center / cover no-repeat;
 }
 
 #right {
-  background: url("/assets/images/invaders/right.png") center / cover no-repeat;
+  background: url("../images/invaders/right.png") center / cover no-repeat;
 }
 
 #fire {
