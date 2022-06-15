@@ -134,6 +134,12 @@ footer a:hover {
   }
 }
 
+@media (min-width: 2250px) {
+  html {
+    font-size: 150%;
+  }
+}
+
 @media (max-height: 860px) {
   #end {
     font-size: 0.75em;
