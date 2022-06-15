@@ -83,6 +83,29 @@ h1 {
   margin: 10px 0;
 }
 
+/* Footer styling */
+footer {
+    height: 5rem;
+    background-color: var(--hog-brown);
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-socials > li {
+    display: inline;
+}
+
+footer a {
+    color: #25c40d;
+    padding: 0 1.5rem;
+    line-height: 4.75rem;
+    transition: color 0.7s linear 0s;
+}
+
+footer a:hover {
+    color: #04650d;
+}
+
 /* Media queries */
 @media (max-width: 1024px) {
   header {
