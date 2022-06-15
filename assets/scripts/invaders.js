@@ -25,7 +25,7 @@ let noWrap = true
 let tankHealth = 30
 let bossHealth = 30
 let bossId = 0
-let bossSpawn = 14
+let bossPosition = 14
 let bossGoingRight = true
 let bossDirection = 1
 let bossDied = false
@@ -123,7 +123,6 @@ function moveInvaders() {
 
 function spawnBoss() {
   bossId = setInterval(moveBoss, intervalTime)
-  let bossPosition = bossSpawn
   
   function moveBoss() {
     squares[bossPosition].classList.remove("boss")
