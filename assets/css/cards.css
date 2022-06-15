@@ -59,8 +59,8 @@ button {
 .card:active {
   -webkit-transform: scale(0.97);
   transform: scale(0.97);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .card.flip {
