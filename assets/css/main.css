@@ -121,6 +121,14 @@ footer a:hover {
     padding-right: 20px;
     margin: 8px auto;
   }
+  footer {
+    height: 2rem;
+  }
+  footer a{
+    font-size: 0.5em;
+    padding: 0 0.25em;
+    line-height: 2rem;
+  }
 }
 
 @media (max-height: 860px) {
