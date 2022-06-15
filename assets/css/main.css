@@ -12,7 +12,8 @@
 body {
   background-color: #282828;
   font-family: "Press Start 2P", sans-serif;
-  height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,14 +27,16 @@ a {
 
 header {
   height: 10vh;
-  width: 100%;
+  width: min(1200px, 90vw);
   font-size: 3rem;
-  line-height: 60px;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #main-screen {
-  width: 80vw;
+  width: min(80vw, 100%);
   height: 80vh;
   border-radius: 60px;
   background-color: #eef1db;
