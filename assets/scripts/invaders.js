@@ -22,6 +22,7 @@ let invadersId = 0
 let intervalTime = 0
 let noWrap = true
 
+let bossHealth = 30
 let bossId = 0
 let bossSpawn = 14
 let bossGoingRight = true
@@ -170,7 +171,25 @@ function shoot(event) {
           invadersRemoved.push(invaderRemoved)
           points++
           score.innerHTML = points
-      } 
+      }
+
+      if (squares[missilePosition].classList.contains("boss") && bossHealth > 10) {
+        squares[missilePosition].classList.remove("missile")
+        squares[missilePosition].classList.add("boom")
+        bossHealth -= 10
+        setTimeout(() => squares[missilePosition].classList.remove("boom"), 200)
+        clearInterval(missileId)
+        
+        } else if (squares[missilePosition].classList.contains("boss") && bossHealth <= 10) {
+        squares[missilePosition].classList.remove("missile")
+        squares[missilePosition].classList.remove("boss")
+        squares[missilePosition].classList.add("boom")
+        clearInterval(bossId)
+        setTimeout(() => squares[missilePosition].classList.remove("boom"), 200)
+        clearInterval(missileId)
+        points += 10
+        score.innerHTML = points
+        }
       
   }
   if (event.key === "ArrowUp" || event.keyCode === 32 || event.target.id === "fire") {
