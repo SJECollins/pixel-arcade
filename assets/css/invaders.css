@@ -45,6 +45,10 @@ button {
   background: url("../images/invaders/boom.png") center / contain no-repeat;
 }
 
+.boss {
+  background: url("../images/invaders/boss.png") center / contain no-repeat;
+}
+
 #directions {
   width: 100%;
   display: flex;
@@ -75,7 +79,7 @@ button {
   color:#25c40d;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 2000px) {
   #board {
     width: 608px;
     height: 608px;
@@ -88,7 +92,7 @@ button {
 
 @media (max-width: 600px) {
   button {
-    margin: 4px;
+    margin: 5px;
   }
 }
 

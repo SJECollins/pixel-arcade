@@ -22,6 +22,11 @@ let invadersId = 0
 let intervalTime = 0
 let noWrap = true
 
+let bossId = 0
+let bossSpawn = 14
+let bossGoingRight = true
+let bossDirection = 1
+
 function changeWrap() {
   if (noWrap === true) {
     noWrap = false
@@ -64,6 +69,7 @@ function remove() {
         squares[invaders[i]].classList.remove("invader")
     }
 }
+
 /**
  * Function to move the tank across the bottom of the screen
  * Can control the tank with arrows, a and d keys or the arrows on the screen
@@ -80,6 +86,7 @@ function moveTank(event) {
     }
     squares[currentPosition].classList.add("tank")
 } 
+
 // Move the invaders back and forth across the screen
 function moveInvaders() {
     const leftEdge = invaders[0] % width === 0
@@ -111,6 +118,26 @@ function moveInvaders() {
     checkEnd()
 }
 
+function spawnBoss() {
+  bossId = setInterval(moveBoss, intervalTime)
+  let bossPosition = bossSpawn
+  
+  function moveBoss() {
+    squares[bossPosition].classList.remove("boss")
+    bossPosition += bossDirection
+    squares[bossPosition].classList.add("boss") 
+
+    if (bossPosition === 29 && bossGoingRight) {
+    bossDirection = - 1
+    bossGoingRight = false
+    }
+    
+    if (bossPosition === 15 && !bossGoingRight) {
+    bossDirection  = + 1
+    bossGoingRight = true
+    }
+  }
+}
 /**
  * shoot function to create and move the missile and kill invaders.
  * Can trigger with up arrow, space or fire button on page
@@ -154,9 +181,6 @@ function shoot(event) {
       document.addEventListener("keydown", shoot)
       fire.addEventListener("click", shoot)
     }, 500)
-    console.log(event.key)
-    console.log(event.keyCode)
-    console.log(event.target.id)
   }
 }
 
@@ -168,7 +192,7 @@ function checkEnd() {
     }
 
     for (let i = 0; i < invaders.length; i++) {
-        if (invaders[i] > squares.length - width) {
+        if (invaders[i] > squares.length) {
             gameEnd = "DIED"
             endGame()
         }
@@ -187,10 +211,15 @@ function startGame() {
   invadersId = setInterval(moveInvaders, intervalTime)
   points = 0
   gameEnd = ""
+  
+  setTimeout(() => {
+    spawnBoss()
+  }, 6000)
 }
 
 // endGame function
 function endGame() {
+  clearInterval(bossId)
   clearInterval(invadersId)
   result.innerHTML = gameEnd
   endScore.innerHTML = points
