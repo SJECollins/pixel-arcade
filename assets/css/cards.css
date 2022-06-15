@@ -59,6 +59,10 @@ button {
 }
 
 .card.flip {
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -68,12 +72,17 @@ button {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background: center / contain no-repeat;
   background-color: #282828;
 }
 
 .front-face {
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
