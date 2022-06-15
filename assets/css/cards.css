@@ -49,7 +49,8 @@ button {
   transform: scale(1);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   border-radius: 10px;
   background-color: #282828;
   box-shadow: 5px 0 5px;
@@ -58,7 +59,8 @@ button {
 .card:active {
   -webkit-transform: scale(0.97);
   transform: scale(0.97);
-  transition: transform 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .card.flip {
