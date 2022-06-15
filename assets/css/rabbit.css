@@ -28,7 +28,7 @@ button {
 }
 
 #board {
-  background-image: url("/assets/images/rabbit/rabbit-background.png");
+  background-image: url("../assets/images/rabbit/rabbit-background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ button {
 .hole::after {
   content: "";
   display: block;
-  background-image: url("/assets/images/rabbit/hole.png");
+  background-image: url("../assets/images/rabbit/hole.png");
   background-size: contain;
   position: absolute;
   bottom: -20px;
@@ -66,7 +66,7 @@ button {
 }
 
 .rabbit {
-  background-image: url("/assets/images/rabbit/rabbit.png");
+  background-image: url("../assets/images/rabbit/rabbit.png");
   position: absolute;
   top: 100%;
   width: 90%;
