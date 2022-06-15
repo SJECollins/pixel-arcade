@@ -13,67 +13,67 @@ let endTime = document.getElementById("end-time")
 const cardsArray = [
   {
     name: "cat",
-    img: "assets/images/cards/cat.webp",
+    img: "../images/cards/cat.webp",
   },
   {
     name: "cow",
-    img: "assets/images/cards/cow.webp",
+    img: "../images/cards/cow.webp",
   },
   {
     name: "gorilla",
-    img: "assets/images/cards/gorilla.webp",
+    img: "../images/cards/gorilla.webp",
   },
   {
     name: "elephant",
-    img: "assets/images/cards/elephant.webp",
+    img: "../images/cards/elephant.webp",
   },
   {
     name: "hippo",
-    img: "assets/images/cards/hippo.webp",
+    img: "../images/cards/hippo.webp",
   },
   {
     name: "lion",
-    img: "assets/images/cards/lion.webp",
+    img: "../images/cards/lion.webp",
   },
   {
     name: "parrot",
-    img: "assets/images/cards/parrot.webp",
+    img: "../images/cards/parrot.webp",
   },
   {
     name: "bat",
-    img: "assets/images/cards/bat.webp",
+    img: "../images/cards/bat.webp",
   },
   {
     name: "chameleon",
-    img: "assets/images/cards/chameleon.webp",
+    img: "../images/cards/chameleon.webp",
   },
   {
     name: "deer",
-    img: "assets/images/cards/deer.webp",
+    img: "../images/cards/deer.webp",
   },
   {
     name: "frog",
-    img: "assets/images/cards/frog.webp",
+    img: "../images/cards/frog.webp",
   },
   {
     name: "ram",
-    img: "assets/images/cards/ram.webp",
+    img: "../images/cards/ram.webp",
   },
   {
     name: "raven",
-    img: "assets/images/cards/raven.webp",
+    img: "../images/cards/raven.webp",
   },
   {
     name: "sabre",
-    img: "assets/images/cards/sabre.webp",
+    img: "../images/cards/sabre.webp",
   },
   {
     name: "turtle",
-    img: "assets/images/cards/turtle.webp",
+    img: "../images/cards/turtle.webp",
   },
   {
     name: "walrus",
-    img: "assets/images/cards/walrus.webp",
+    img: "../images/cards/walrus.webp",
   },
 ]
 
