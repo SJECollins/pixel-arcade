@@ -49,6 +49,10 @@ button {
   background: url("../images/invaders/boss.png") center / contain no-repeat;
 }
 
+.bomb {
+  background: url("../images/invaders/bomb.png") center / contain no-repeat;
+}
+
 #directions {
   width: 100%;
   display: flex;
