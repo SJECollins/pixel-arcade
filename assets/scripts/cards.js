@@ -138,6 +138,7 @@ function createCards() {
     const backFace = document.createElement('div');
     backFace.classList.add('back-face');
     
+    
     grid.appendChild(card);
     card.appendChild(frontFace);
     card.appendChild(backFace);

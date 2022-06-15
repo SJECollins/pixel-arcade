@@ -80,7 +80,8 @@ button {
 }
 
 .front-face {
-  -webkit-transform: rotateY(180deg);
+  z-index: 2;
+  -webkit-transform: rotateY(1800deg);
   transform: rotateY(180deg);
 }
 
