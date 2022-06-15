@@ -75,7 +75,7 @@ button {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background: center / contain no-repeat;
-  background-color: #282828;
+  /* background-color: #282828; */
 }
 
 .front-face {
