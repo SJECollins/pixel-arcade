@@ -25,7 +25,7 @@ let noWrap = true
 let tankHealth = 30
 let bossHealth = 30
 let bossId = 0
-let bossPosition = 14
+let bossSpawn = 14
 let bossGoingRight = true
 let bossDirection = 1
 let bossDied = false
@@ -123,7 +123,7 @@ function moveInvaders() {
 
 function spawnBoss() {
   bossId = setInterval(moveBoss, intervalTime)
-  dropBomb()
+  let bossPosition = bossSpawn
   
   function moveBoss() {
     squares[bossPosition].classList.remove("boss")
@@ -141,35 +141,6 @@ function spawnBoss() {
     }
   }
 }
-
-// Function for boss to drop bombs
-function dropBomb() {
-  let bombId = setInterval(moveBomb, intervalTime * 2)
-  let bombPosition = bossPosition
-  
-  function moveBomb() {
-  squares[bombPosition].classList.remove("bomb")
-  bombPosition += width
-  squares[bombPosition].classList.add("bomb")
-  
-    if (bombPosition > squares.length) {
-    squares[bombPosition].classList.remove("bomb")
-    clearInterval(bombId)
-    return
-    }
-  
-    if (squares[bombPosition].classList.contains("tank")) {
-    squares[bombPosition].classList.remove("bomb")
-    squares[bombPosition].classList.add("boom")
-    setTimeout(() => squares[bombPosition].classList.remove("boom"), 200)
-    clearInterval(bombId)
-    tankHealth -= 10
-    
-    checkEnd()
-    }
-  }
-}
-
 /**
  * shoot function to create and move the missile and kill invaders.
  * Can trigger with up arrow, space or fire button on page
@@ -252,11 +223,6 @@ function checkEnd() {
     if (invadersRemoved.length === invaders.length && bossDied) {
         gameEnd = "WIN"
         endGame()
-    }
-
-    if (tankHealth <= 0) {
-      gameEnd = "DIED"
-      gameEnd()
     }
 }
 
