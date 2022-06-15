@@ -85,6 +85,13 @@ button {
   background-color: transparent;
 }
 
+@media (min-width: 2250px) {
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 @media (max-width: 1180px) {
   h2 {
     font-size: 1em;
