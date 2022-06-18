@@ -29,6 +29,8 @@ let bossPosition = 14
 let bossGoingRight = true
 let bossDirection = 1
 let bossDied = false
+let invadersDead = false
+let bombInterval
 
 function changeWrap() {
   if (noWrap === true) {
@@ -43,7 +45,7 @@ function changeWrap() {
 }
 
 // Our for loop creating our board
-for (let i = 0; i < 225; i++) {
+for (let i = 0; i < 240; i++) {
     const square = document.createElement("div")
     board.appendChild(square)
 }
@@ -117,17 +119,25 @@ function moveInvaders() {
         invaders[i] += direction
     }
     
-    draw()
+    draw() 
+    
+    if (invaders.length === invadersRemoved.length) {
+      invadersDead = true
+      clearInterval(invadersId)
+    }
+    
     checkEnd()
 }
 
 function spawnBoss() {
   bossId = setInterval(moveBoss, intervalTime)
+  bombInterval = setInterval(dropBomb, 1500)
   
   function moveBoss() {
     squares[bossPosition].classList.remove("boss")
     bossPosition += bossDirection
-    squares[bossPosition].classList.add("boss") 
+    squares[bossPosition].classList.add("boss")
+    bombInterval
 
     if (bossPosition === 29 && bossGoingRight) {
     bossDirection = - 1
@@ -138,8 +148,40 @@ function spawnBoss() {
     bossDirection  = + 1
     bossGoingRight = true
     }
+   
   }
 }
+
+/**
+ * function for boss to drop bombs and kill the tank
+ */
+
+function dropBomb() {
+  let bombId  = setInterval(moveBomb, 200)
+  let bombPosition = bossPosition
+  
+  function moveBomb() {
+    squares[bombPosition].classList.remove("bomb")
+    bombPosition += width
+    squares[bombPosition].classList.add("bomb")
+
+    if (bombPosition > (squares.length - 15)) {
+      squares[bombPosition].classList.remove("bomb")
+      clearInterval(bombId)
+      return
+    }
+
+    if (squares[bombPosition].classList.contains("tank")) {
+      squares[bombPosition].classList.remove("bomb")
+      squares[bombPosition].classList.add("boom")
+      setTimeout(() => squares[bombPosition].classList.remove("boom"), 200)
+      clearInterval(bombId)
+      tankHealth -= 10
+    }
+    checkEnd()
+  }
+}
+
 /**
  * shoot function to create and move the missile and kill invaders.
  * Can trigger with up arrow, space or fire button on page
@@ -172,6 +214,7 @@ function shoot(event) {
           invadersRemoved.push(invaderRemoved)
           points++
           score.innerHTML = points
+          checkEnd()
       }
 
       if (squares[missilePosition].classList.contains("boss") && bossHealth > 10) {
@@ -185,12 +228,15 @@ function shoot(event) {
         squares[missilePosition].classList.remove("missile")
         squares[missilePosition].classList.remove("boss")
         squares[missilePosition].classList.add("boom")
+
         clearInterval(bossId)
         setTimeout(() => squares[missilePosition].classList.remove("boom"), 200)
         clearInterval(missileId)
         bossDied = true
+        clearInterval(bombInterval)
         points++
         score.innerHTML = points
+        checkEnd()
         }
       
   }
@@ -207,19 +253,24 @@ function shoot(event) {
 
 // Conditions to trigger the endGame function
 function checkEnd() {
-   if (squares[currentPosition].classList.contains("invader","tank")) {
+  if (squares[currentPosition].classList.contains("invader","tank")) {
         gameEnd = "DIED"
         endGame()
     }
-
-    for (let i = 0; i < invaders.length; i++) {
-        if (invaders[i] > squares.length) {
-            gameEnd = "DIED"
-            endGame()
-        }
+    
+  for (let i = 0; i < invaders.length; i++) {
+    if ((invaders[i]) > squares.length - 15) {
+      gameEnd = "DIED"
+      endGame()
     }
+  }
 
-    if (invadersRemoved.length === invaders.length && bossDied) {
+  if (tankHealth <= 0) {
+    gameEnd = "DIED"
+    endGame()
+  }
+      
+  if (invadersDead && bossDied) {
         gameEnd = "WIN"
         endGame()
     }

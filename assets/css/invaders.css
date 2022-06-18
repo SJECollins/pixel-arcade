@@ -12,7 +12,7 @@ button {
 
 #board {
   width: 308px;
-  height: 308px;
+  height: 328px;
   border: 4px solid black;
   border-radius: 8px;
   display: flex;
@@ -37,16 +37,16 @@ button {
   background: url("../images/invaders/tank.png") center / contain no-repeat;
 }
 
+.boss {
+  background: url("../images/invaders/boss.png") center / contain no-repeat;
+}
+
 .missile {
   background: url("../images/invaders/missile.png") center / contain no-repeat;
 }
 
 .boom {
   background: url("../images/invaders/boom.png") center / contain no-repeat;
-}
-
-.boss {
-  background: url("../images/invaders/boss.png") center / contain no-repeat;
 }
 
 .bomb {
